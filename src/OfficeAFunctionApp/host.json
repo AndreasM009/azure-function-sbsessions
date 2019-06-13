@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "extensions": {
+    "serviceBus": {
+      "prefetchCount": 100,
+      "messageHandlerOptions": {
+        "autoComplete": true,
+        "maxConcurrentCalls": 32,
+        "maxAutoRenewDuration": "00:55:00"
+      },
+      "sessionHandlerOptions": {
+        "autoComplete": true,
+        "maxConcurrentSessions": 32,
+        "maxAutoRenewDuration": "00:55:00"
+      }
+    }
+  }
+}
