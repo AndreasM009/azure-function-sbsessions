@@ -11,7 +11,7 @@ trigger:
      - master
   paths:
     include:
-      - src/Dispatcher/*
+      - src/MessageApi/MessageApi/*csproj
    
   
 pool:
