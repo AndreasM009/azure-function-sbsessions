@@ -34,3 +34,8 @@ steps:
     configuration: $(buildConfiguration)
     arguments: '--output $(build.artifactstagingdirectory)'
     zipAfterPublish: true
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artefacts
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()   
