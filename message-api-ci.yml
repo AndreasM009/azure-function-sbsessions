@@ -11,7 +11,7 @@ trigger:
      - master
   paths:
     include:
-      - src/MessageApi/MessageApi/*csproj
+      - src/MessageApi/*
    
   
 pool:
@@ -19,7 +19,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  projectFile: 'src/Dispatcher/DispatcherFunctionApp/*.csproj'
+  projectFile: 'src/MessageApi/messageApi/*.csproj'
 
 steps:
 - task: DotNetCoreCLI@2
