@@ -15,6 +15,22 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: Restore
   inputs:
     command: restore
     projects: $(projectFile)
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+   command: build
+   projects: $(projectFile)
+   configuration: $(buildConfiguration)
+- task: DotNetCoreCLI@2
+  displayName: Publish
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: $(projectFile)
+    configuration: $(buildConfiguration)
+    arguments: '--output $(build.artifactstagingdirectory)'
+    zipAfterPublish: true
